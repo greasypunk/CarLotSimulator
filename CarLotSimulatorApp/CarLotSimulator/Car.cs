@@ -4,23 +4,28 @@ using System.Text;
 
 namespace CarLotSimulator
 {
-    //Create a seperate class file called Car
-    //Car shall have the following properties: Year, Make, Model, EngineNoise, HonkNoise, IsDriveable
-    //Car shall have the following methods: MakeEngineNoise(), MakeHonkNoise()
-    //The methods should take one string parameter: the respective noise property
-
-    internal class Car:CarLot
+    internal class Car
     {
         public Car()
         {
-            CarList.Add();
         }
-        public bool isDriveable { get; set; }
-        public int Year { get; set; }
+
+        public Car(string make, string model, int year, string engineNoise, string honkNoise, bool isDriveable)
+        {
+            Make = make;
+            Model = model;
+            Year = year;
+            EngineNoise = engineNoise;
+            HonkNoise = honkNoise;
+            IsDriveable = isDriveable;
+        }   
+
         public string Make { get; set; }
         public string Model { get; set; }
+        public int Year { get; set; }
         public string EngineNoise { get; set; }
         public string HonkNoise { get; set; }
+        public bool IsDriveable { get; set; }
 
         public void MakeEngineNoise()
         {
@@ -31,7 +36,5 @@ namespace CarLotSimulator
         {
             Console.WriteLine(HonkNoise);
         }
-
-
     }
 }
