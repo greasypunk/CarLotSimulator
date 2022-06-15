@@ -9,10 +9,11 @@ namespace CarLotSimulator
         public Car()
         {
             CarLot.numberOfCars++;
+            CarLot.StaticCarList.Add(this);
             Console.WriteLine($"there are a total of {CarLot.numberOfCars} car(s) on the lot");
         }
 
-        public Car(string make, string model, int year, string engineNoise, string honkNoise, bool isDriveable)
+        public Car(string make, string model, int year, string engineNoise, string honkNoise, bool isDriveable) : this()
         {
             Make = make;
             Model = model;
@@ -20,8 +21,6 @@ namespace CarLotSimulator
             EngineNoise = engineNoise;
             HonkNoise = honkNoise;
             IsDriveable = isDriveable;
-            CarLot.numberOfCars++;
-            Console.WriteLine($"there are a total of {CarLot.numberOfCars} car(s) on the lot");
         }
 
         public string Make { get; set; }

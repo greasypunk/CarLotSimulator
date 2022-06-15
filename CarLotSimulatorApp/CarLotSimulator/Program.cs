@@ -47,7 +47,11 @@ namespace CarLotSimulator
             myCar3.MakeEngineNoise();
             myCar3.MakeHonkNoise();
 
+            Console.WriteLine("\nmyCarLot.CarList:");
             foreach (var car in myCarLot.CarList)
+                Console.WriteLine($"\nYear: {car.Year}, Make: {car.Make}, Model: {car.Model}");
+            Console.WriteLine("\nCarLot.StaticCarList:");
+            foreach (var car in CarLot.StaticCarList)
                 Console.WriteLine($"\nYear: {car.Year}, Make: {car.Make}, Model: {car.Model}");
 
         }
